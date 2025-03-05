@@ -7,3 +7,4 @@ matplotlib
 xgboost
 tensorflow
 folium
+streamlit-folium
