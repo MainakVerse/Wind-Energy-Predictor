@@ -138,5 +138,5 @@ with tab2:
 # Footer
 st.markdown("""
 ---
-© 2024 WindPro | AI-Powered Wind Energy Prediction
+© 2025 WindPro | AI-Powered Wind Energy Prediction
 """)
