@@ -97,14 +97,14 @@ with tab2:
     # Wind Map Section
     st.title("Real-Time Wind Map of India")
     
-    # Simulated Wind Speed Data for India (Major Cities)
+    # Hardcoded City Coordinates and Wind Speeds
     wind_data = {
-        'Mumbai': 12.5,
-        'Delhi': 8.3,
-        'Bangalore': 10.2,
-        'Chennai': 9.7,
-        'Hyderabad': 11.1,
-        'Kolkata': 7.6
+        'Mumbai': {'coords': [19.0760, 72.8777], 'speed': 12.5},
+        'Delhi': {'coords': [28.6139, 77.2090], 'speed': 8.3},
+        'Bangalore': {'coords': [12.9716, 77.5946], 'speed': 10.2},
+        'Chennai': {'coords': [13.0827, 80.2707], 'speed': 9.7},
+        'Hyderabad': {'coords': [17.3850, 78.4867], 'speed': 11.1},
+        'Kolkata': {'coords': [22.5726, 88.3639], 'speed': 7.6}
     }
     
     # Create a Folium map centered on India
@@ -112,11 +112,11 @@ with tab2:
                    tiles='CartoDB dark_matter')
     
     # Add markers for wind speeds
-    for city, speed in wind_data.items():
+    for city, data in wind_data.items():
         folium.CircleMarker(
-            location=folium.utilities.get_city_coordinates(city),
-            radius=speed,
-            popup=f"{city}: {speed} m/s",
+            location=data['coords'],
+            radius=data['speed'],
+            popup=f"{city}: {data['speed']} m/s",
             color='#00f0ff',
             fill=True,
             fill_color='#00f0ff'
@@ -130,10 +130,10 @@ with tab2:
     col1, col2 = st.columns(2)
     
     with col1:
-        st.metric("Highest Wind Speed", f"{max(wind_data.values())} m/s")
+        st.metric("Highest Wind Speed", f"{max(d['speed'] for d in wind_data.values())} m/s")
     
     with col2:
-        st.metric("Lowest Wind Speed", f"{min(wind_data.values())} m/s")
+        st.metric("Lowest Wind Speed", f"{min(d['speed'] for d in wind_data.values())} m/s")
 
 # Footer
 st.markdown("""
