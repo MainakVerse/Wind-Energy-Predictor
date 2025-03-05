@@ -6,3 +6,4 @@ seaborn
 matplotlib
 xgboost
 tensorflow
+folium
