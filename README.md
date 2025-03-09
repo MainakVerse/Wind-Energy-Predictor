@@ -2,6 +2,7 @@
 
 ## Overview
 This project involves the development and deployment of a **wind power forecasting application** leveraging **machine learning** and **deep learning** techniques. The application predicts wind power using key variables such as wind speed, wind direction, and theoretical power. A user-friendly web interface was built using **Streamlit** for real-time predictions.
+
 ![image](https://github.com/user-attachments/assets/69e3d79e-71c4-4a2d-aa91-9c95196c7347)
 ![image](https://github.com/user-attachments/assets/8d704328-117a-4d05-b68b-a4eae33a78b4)
 
